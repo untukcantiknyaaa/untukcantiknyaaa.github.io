@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Words</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/words.css" />
+  </head>
+  <body>
+    <audio class="song" hidden controls loop>
+      <source src="music/hbd.mp3" />
+      Your browser isn't invited for super fun audio time.
+    </audio>
+    <div class="container-message">
+      <button class="btn btn-primary" id="play">Putar Musik Dulu Okayy</button>
+      <span id="typed" style="white-space: pre"></span>
+      <div
+        id="btn-to-wa"
+        style="
+          margin-top: 400px;
+          text-align: center;
+          position: absolute;
+          display: none;
+        "
+      >
+        <a href="https://wa.me/6285876878126/?text=" class="btn btn-success">
+          Kirim Pesan Ke Whatsapp Aa
+        </a>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      setTimeout(() => {
+        $("#btn-to-wa").fadeIn(1000);
+      }, 60000);
+      $("#play").click(function () {
+        $(this).hide();
+        var audio = $(".song")[0];
+        audio.play();
+
+        setTimeout(() => {
+          new Typed("#typed", {
+            strings: [
+              "Haloo Amila Ashabul Jannah",
+              "Eh, sekarang jadi cantiknya aa yah xixi",
+              "Senyum dulu dong...",
+              "Nah gitu kan manis, cantik...",
+              "Hari ini kan hari spesial buat cantik",
+              "Karena apa??",
+              "Karena Aa masih sama cantik jadinya spesial",
+              "Eh ngga deng becanda..",
+              "Hari ini hari spesial karena",
+              "Cantik kan sekarang Tambah Tuaaaa",
+              "Cieee tambah tua nih..",
+              "Selamat Ulang Tahun Cantik",
+              "Semoga cantik sehat selalu",
+              "Semoga apa yang cantik inginkan",
+              "Apa yang cantik cita-citakan",
+              "Apa yang cantik impikan",
+              "Bisa terwujud, Aamiin...",
+              "Cantik bisa jadi pribadi yang lebih baik lagi",
+              "Cantik tambah pinter",
+              "Cantik tambah sholehah",
+              "Intinya tambah yang baik-baik okeyy",
+            ],
+            typeSpeed: 150,
+            backSpeed: 50,
+            loop: false,
+            showCursor: true,
+            cursorChar: "_",
+            autoInsertCss: true,
+          });
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
