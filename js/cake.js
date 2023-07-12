@@ -64,8 +64,8 @@ $(".oven").droppable({
     $(".stage3").fadeOut();
     fire_modal(
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/oven_modal.png",
-      "Bake successfull!",
-      "Yes! You are a master chef. The base is fully baked and looks super yummy. Now its time to combine this base with lots of other ingredients like jam, marmalade, chocolate and more."
+      "Kuenya Sudah Matang xixi!",
+      "Kuenya benar-benar matang dan terlihat sangat lezat. Sekarang saatnya menggabungkan bahan dasar ini dengan banyak bahan lain seperti selai,cokelat, dan lainnya. ayoo cantik lanjut.."
     );
   },
 });
@@ -132,7 +132,7 @@ function fin() {
     $(".cakemake").animate({ "margin-top": "0px" });
   }, 1000);
   add_candle();
-  $("svg").addClass("text");
+  // $(".svg").addClass("text");
 }
 
 function add_candle() {
@@ -140,11 +140,17 @@ function add_candle() {
   var h = (stages / 2) * 41 + 22 + "px";
   console.log(stages);
   $(".cakemake").prepend(
-    '<div class="candle" ><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/candle.png" /></div>'
+    '<div class="candle" id="candle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/candle.png" /></div>'
   );
-  $("svg").show();
+  $(".svg .tiup-lilin-text").show();
   setTimeout(function () {
-    $(".sa").fadeIn();
+    $("#candle").click(function () {
+      $(this).hide();
+      $(".svg .tiup-lilin-text").fadeOut();
+      $(".svg .happy-text").fadeIn();
+      $(".confetti").show();
+      $(".sa").fadeIn();
+    });
   }, 2200);
 }
 
@@ -153,5 +159,5 @@ $(".add").click(function () {
 });
 
 $(".sa").click(function () {
-  window.location.reload();
+  window.location.href = "letter.html";
 });
