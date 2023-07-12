@@ -9,26 +9,64 @@
   <body>
     <div class="birthdayCard">
       <div class="cardFront">
-        <h3 class="happy">HAPPY BIRTHDAY!</h3>
-        <div class="balloons">
-          <div class="balloonOne"></div>
-          <div class="balloonTwo"></div>
-          <div class="balloonThree"></div>
-          <div class="balloonFour"></div>
+        <div class="front-text">
+          <h3 class="happy">HAPPY</h3>
+          <h2 class="bday">BIRTHDAY</h2>
+          <h3 class="toyou">AMILA</h3>
+        </div>
+        <div class="wrap-deco">
+          <div class="decorations"></div>
+          <div class="decorationsTwo"></div>
+        </div>
+        <div class="wrap-decoTwo">
+          <div class="decorations"></div>
+          <div class="decorationsThree"></div>
+        </div>
+        <div class="plate">
+          <div class="cake"></div>
+          <div class="flame"></div>
         </div>
       </div>
-      <div class="cardInside">
-        <h3 class="back">HAPPY BIRTHDAY!</h3>
-        <p>Untuk Amila Ashabul Jannah,</p>
-        <p>Happy birthday!!</p>
-        <p></p>
 
-        <p>
-          Aa harap apa yang cantik inginkan, apa yang cantik cita-citakan semoga
-          terwujud dan cantik menjadi pribadi yang lebih baik lagi
-        </p>
-        <p class="name">Bendi Tandayu Saputra</p>
+      <div class="cardInside">
+        <div class="inside-text">
+          <h3 class="happy">HAPPY</h3>
+          <h2 class="bday">BIRTHDAY</h2>
+          <h3 class="toyou">AMILA</h3>
+        </div>
+        <div class="wishes">
+          <p>Untuk Cantik,</p>
+          <p>
+            Happy birthday!! Semoga apa yang cantik harapkan dan apa yang cantik
+            citatakan bisa terwujud.
+          </p>
+          <p class="name">Aa</p>
+        </div>
       </div>
     </div>
+
+    <button class="bubbly-button">Lanjut</button>
+
+    <script>
+      var animateButton = function (e) {
+        e.preventDefault;
+        //reset animation
+        e.target.classList.remove("animate");
+
+        e.target.classList.add("animate");
+        setTimeout(function () {
+          e.target.classList.remove("animate");
+        }, 700);
+        setTimeout(function () {
+          window.location.href = "words.html";
+        }, 1000);
+      };
+
+      var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+      for (var i = 0; i < bubblyButtons.length; i++) {
+        bubblyButtons[i].addEventListener("click", animateButton, false);
+      }
+    </script>
   </body>
 </html>

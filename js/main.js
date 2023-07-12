@@ -1,5 +1,5 @@
 $("#time")
-  .countdown("2023/07/13 00:00:00")
+  .countdown("2023/07/13 02:00:00")
   .on("update.countdown", function (event) {
     var $this = $(this).html(
       event.strftime(
